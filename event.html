@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Open Recruitment Model Christian Wijaya - Daftarkan dirimu sekarang." />
+  <title>Acara | Christian Wijaya</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="header1">
+    <nav class="navigation">
+      <div class="left-group">
+        <a href="main.html" class="logo" aria-label="Christian Wijaya - Beranda">
+          <h2 class="text">CW</h2>
+        </a>
+        <button class="garis3" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <ul class="menu" role="menubar">
+        <li class="items" role="none"><a href="main.html" class="link" role="menuitem">Beranda</a></li>
+        <li class="items" role="none"><a href="main.html#gender" class="link" role="menuitem">Produk</a></li>
+        <li class="items" role="none"><a href="event.html" class="link" role="menuitem">Acara</a></li>
+        <li class="items" role="none"><a href="main.html#tentang" class="link" role="menuitem">Tentang</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="product-detail" id="event" aria-label="Acara Open Recruitment">
+
+    <div class="container">
+      <div class="kanan">
+        <div class="about">
+          <h3>Open Recruitment Model</h3>
+          <p>
+            Kami membuka kesempatan bagi kamu yang ingin menjadi bagian dari dunia modeling!
+            Jika kamu memiliki kepercayaan diri, semangat, dan karakter yang kuat, inilah saatnya untuk bersinar bersama
+            Christian Wijaya.
+          </p>
+          <p>
+            Pendaftaran terbuka untuk semua gender dengan usia minimal 17 tahun. Pastikan kamu mengisi data dengan benar
+            dan menyetujui syarat &amp; ketentuan yang berlaku.
+          </p>
+          <ul style="margin: 12px 0 0 16px; color: #555; font-size: 0.9rem; line-height: 2;">
+            <li>&#10003; &nbsp;Usia minimal 17 tahun</li>
+            <li>&#10003; &nbsp;Terbuka untuk semua gender</li>
+            <li>&#10003; &nbsp;Berdomisili di Indonesia</li>
+            <li>&#10003; &nbsp;Memiliki semangat dan kepercayaan diri tinggi</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="kanan">
+        <div class="about">
+          <h3>Formulir Pendaftaran</h3>
+          <form id="modelForm" novalidate>
+
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" placeholder="Contoh: Budi Santoso" autocomplete="name" />
+            <div class="error" id="namaError" role="alert" aria-live="polite"></div>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Contoh: budi@email.com" autocomplete="email" />
+            <div class="error" id="emailError" role="alert" aria-live="polite"></div>
+
+            <label for="tanggalLahir">Tanggal Lahir</label>
+            <input type="date" id="tanggalLahir" />
+            <div class="error" id="tanggalError" role="alert" aria-live="polite"></div>
+
+            <label>Jenis Kelamin</label>
+            <div style="display:flex; gap:24px; margin-top:8px;">
+              <label style="margin-top:0; display:flex; align-items:center; gap:6px; font-weight:400; color:#444;">
+                <input type="radio" name="gender" value="Laki-laki" /> Laki-laki
+              </label>
+              <label style="margin-top:0; display:flex; align-items:center; gap:6px; font-weight:400; color:#444;">
+                <input type="radio" name="gender" value="Perempuan" /> Perempuan
+              </label>
+            </div>
+            <div class="error" id="genderError" role="alert" aria-live="polite"></div>
+
+            <label
+              style="display:flex; align-items:flex-start; gap:10px; margin-top:20px; font-weight:400; color:#444; cursor:pointer;">
+              <input type="checkbox" id="terms" style="margin-top:3px;" />
+              <span>Saya menyetujui <strong>syarat dan ketentuan</strong> yang berlaku dari Christian Wijaya.</span>
+            </label>
+            <div class="error" id="termsError" role="alert" aria-live="polite"></div>
+
+            <button type="submit">Daftar Sekarang</button>
+            <div id="result" class="success" role="status" aria-live="polite"></div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="footer" aria-label="Footer">
+    <div class="footer-inner">
+      <div class="brand">
+        <h3>CW</h3>
+        <p>Luxury Fashion Brand Indonesia sejak 2020.</p>
+      </div>
+      <div class="contact-info">
+        <h4>Kontak</h4>
+        <p>Email: support@christian.co.id</p>
+        <p>Telepon: +62 877-7724-7742</p>
+      </div>
+      <div class="social">
+        <h4>Ikuti Kami</h4>
+        <div class="sosmed">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Christian Wijaya. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">&#8593;</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

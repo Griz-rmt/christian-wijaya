@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulir Pendaftaran Model</title>
+  <style>
+
+.about h2 {
+  text-align: center;
+  color: #343a40;
+}
+
+.about form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: auto;
+}
+
+.about label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.about input[type="text"],
+.about input[type="email"],
+.about input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  transition: 0.3s;
+}
+
+.about input[type="text"]:focus,
+.about input[type="email"]:focus,
+.about input[type="date"]:focus {
+  outline: none;
+  border-color: #86b7fe;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(13,110,253,0.25);
+}
+
+.about input[type="radio"],
+.about input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+  accent-color: #0d6efd;
+}
+
+.about button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.about button:hover {
+  background-color: #0b5ed7;
+}
+
+.about .error {
+  color: #dc3545;
+  font-size: 0.85em;
+  margin-top: 3px;
+}
+
+.success {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #198754;
+  font-size: 1.1em;
+}
+
+  </style>
+</head>
+<body>
+
+  <h2>Formulir Pendaftaran Model</h2>
+
+  <form id="modelForm">
+    <label>Nama Lengkap:
+      <input type="text" id="nama">
+      <div class="error" id="namaError"></div>
+    </label>
+
+    <label>Email:
+      <input type="email" id="email">
+      <div class="error" id="emailError"></div>
+    </label>
+
+    <label>Tanggal Lahir:
+      <input type="date" id="tanggalLahir">
+      <div class="error" id="tanggalError"></div>
+    </label>
+
+    <label>Jenis Kelamin:</label>
+    <label><input type="radio" name="gender" value="Laki-laki"> Laki-laki</label>
+    <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+    <div class="error" id="genderError"></div>
+
+    <label>
+      <input type="checkbox" id="terms"> Saya menyetujui syarat dan ketentuan
+      <div class="error" id="termsError"></div>
+    </label>
+
+    <button type="submit">Daftar</button>
+    <div id="result" class="success"></div>
+  </form>
+
+  <script>
+    document.getElementById('modelForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      document.getElementById('namaError').textContent = '';
+      document.getElementById('emailError').textContent = '';
+      document.getElementById('tanggalError').textContent = '';
+      document.getElementById('genderError').textContent = '';
+      document.getElementById('termsError').textContent = '';
+      document.getElementById('result').textContent = '';
+
+      const nama = document.getElementById('nama').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const tanggalLahir = document.getElementById('tanggalLahir').value;
+      const genderChecked = document.querySelector('input[name="gender"]:checked');
+      const termsChecked = document.getElementById('terms').checked;
+
+      let valid = true;
+
+      // Validasi Nama
+      if (nama.length < 3) {
+        document.getElementById('namaError').textContent = 'Nama harus lebih dari 3 huruf.';
+        valid = false;
+      }
+
+      // Validasi Email sederhana (tanpa regex)
+      if (!(email.includes('@') && email.includes('.'))) {
+        document.getElementById('emailError').textContent = 'Email tidak valid.';
+        valid = false;
+      }
+
+      // Validasi Tanggal Lahir
+      if (tanggalLahir === '') {
+        document.getElementById('tanggalError').textContent = 'Tanggal lahir harus diisi.';
+        valid = false;
+      } else {
+        const birthDate = new Date(tanggalLahir);
+        const today = new Date();
+        const umur = today.getFullYear() - birthDate.getFullYear();
+        if (umur < 17 || birthDate > today) {
+          document.getElementById('tanggalError').textContent = 'Usia minimal 17 tahun.';
+          valid = false;
+        }
+      }
+
+      // Validasi Gender
+      if (!genderChecked) {
+        document.getElementById('genderError').textContent = 'Pilih jenis kelamin.';
+        valid = false;
+      }
+
+      // Validasi Checkbox
+      if (!termsChecked) {
+        document.getElementById('termsError').textContent = 'Anda harus menyetujui syarat dan ketentuan.';
+        valid = false;
+      }
+
+      if (valid) {
+        document.getElementById('result').textContent = 'Pendaftaran berhasil!';
+        document.getElementById('modelForm').reset();
+      }
+    });
+  </script>
+
+</body>
+</html>

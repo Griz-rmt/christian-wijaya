@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CW Azure Whisper - Syal premium wanita dari Christian Wijaya." />
+  <title>CW Azure Whisper | Christian Wijaya</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="header1">
+    <nav class="navigation">
+      <div class="left-group">
+        <a href="main.html" class="logo" aria-label="Christian Wijaya - Beranda">
+          <h2 class="text">CW</h2>
+        </a>
+        <button class="garis3" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <ul class="menu" role="menubar">
+        <li class="items" role="none"><a href="main.html" class="link" role="menuitem">Beranda</a></li>
+        <li class="items" role="none"><a href="main.html#gender" class="link" role="menuitem">Produk</a></li>
+        <li class="items" role="none"><a href="event.html" class="link" role="menuitem">Acara</a></li>
+        <li class="items" role="none"><a href="main.html#tentang" class="link" role="menuitem">Tentang</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="product-detail" id="product" aria-label="Detail Produk">
+    <a class="back" href="product-woman.html">
+      <img src="arrow-left.jpg" alt="" aria-hidden="true" /> Kembali
+    </a>
+    <div class="container">
+      <div class="kiri">
+        <div class="gambar">
+          <button class="left-btn" onclick="ScrollKiri()" aria-label="Foto sebelumnya">&#8592;</button>
+          <div class="scroll-gallery" id="galeri" role="region" aria-label="Galeri foto produk">
+            <img src="gambar/scarf-woman.webp" alt="CW Azure Whisper tampak depan" loading="lazy" />
+            <img src="gambar/scarf-woman1.webp" alt="CW Azure Whisper dikenakan" loading="lazy" />
+          </div>
+          <button class="right-btn" onclick="ScrollKanan()" aria-label="Foto berikutnya">&#8594;</button>
+        </div>
+      </div>
+      <div class="kanan">
+        <div class="konten">
+          <h3>CW Azure Whisper</h3>
+          <p class="product-price">Rp400.000</p>
+          <p>Memancarkan kelembutan dan keanggunan dalam tiap helainya. Dengan perpaduan warna biru yang tenang dan
+            putih yang bersih, syal ini menawarkan nuansa klasik yang segar dan modern.<br><br>Terbuat dari bahan ringan
+            berkualitas tinggi, CW Azure Whisper memberikan rasa nyaman di kulit sekaligus tampilan yang anggun.
+            Versatile dikenakan sebagai aksen gaya harian, penutup bahu untuk acara formal, atau sentuhan akhir untuk
+            tampilan musim dingin yang sempurna.</p>
+          <form id="productForm" novalidate>
+            <label for="quantity">Kuantitas</label>
+            <div class="quantity">
+              <button type="button" onclick="tambahValue(-1)" aria-label="Kurangi kuantitas">&#8722;</button>
+              <input type="number" name="quantity" id="quantity" min="1" max="20" value="1" required
+                aria-label="Jumlah" />
+              <button type="button" onclick="tambahValue(1)" aria-label="Tambah kuantitas">&#43;</button>
+            </div>
+            <div class="kirim">
+              <button class="chart" type="submit">+ Keranjang</button>
+              <button class="beli" type="button" onclick="beliSekarang()">Beli Sekarang</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" aria-label="Footer">
+    <div class="footer-inner">
+      <div class="brand">
+        <h3>CW</h3>
+        <p>Luxury Fashion Brand Indonesia sejak 2020.</p>
+      </div>
+      <div class="contact-info">
+        <h4>Kontak</h4>
+        <p>Email: support@christian.co.id</p>
+        <p>Telepon: +62 877-7724-7742</p>
+      </div>
+      <div class="social">
+        <h4>Ikuti Kami</h4>
+        <div class="sosmed">
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Christian Wijaya. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Kembali ke atas">&#8593;</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
