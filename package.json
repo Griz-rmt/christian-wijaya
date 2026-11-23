@@ -1,0 +1,16 @@
+{
+  "name": "christian-wijaya",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Christian Wijaya - Luxury Fashion Brand Indonesia",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node --check server.js",
+    "lint": "node --check server.js && node --check script.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
