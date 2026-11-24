@@ -497,6 +497,7 @@ header.show {
 .page3 .container > a {
   display: block;
   width: 100%;
+  min-width: 100%;
   flex: none;
 }
 
@@ -509,8 +510,10 @@ header.show {
   display: flex;
   align-items: flex-end;
   width: 100%;
+  min-width: 100%;
   height: clamp(320px, 34vw, 480px);
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .page3 .man {
